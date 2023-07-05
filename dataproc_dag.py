@@ -41,7 +41,7 @@ with DAG(
     default_args=default_args,
     description='A simple DAG to create a Dataproc workflow',
     schedule_interval=None,
-    start_date = days_ago(2)
+    start_date = days_ago(1)
 ) as dag:
 
     create_cluster = DataprocCreateClusterOperator(
