@@ -37,7 +37,7 @@ PYSPARK_JOB = {
 }
 
 with DAG(
-    'dataproc-demo',
+    'airflow-demo',
     default_args=default_args,
     description='A simple DAG to create a Dataproc workflow',
     schedule_interval=None,
@@ -55,7 +55,7 @@ with DAG(
     submit_job = DataprocSubmitJobOperator(
         task_id="pyspark_task", 
         job=PYSPARK_JOB, 
-        location=REGION, 
+        region=REGION, 
         project_id=PROJECT_ID
     )
 
